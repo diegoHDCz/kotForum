@@ -7,15 +7,13 @@ import diegoczajka.forum.dto.TopicoView
 import diegoczajka.forum.exceptions.NotFoundException
 import diegoczajka.forum.mapper.TopicoFormMapper
 import diegoczajka.forum.mapper.TopicoViewMapper
-import diegoczajka.forum.model.Topico
+
 import diegoczajka.forum.repository.TopicoRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
-import org.springframework.data.web.PageableDefault
+
 import org.springframework.stereotype.Service
-import java.util.*
-import java.util.stream.Collectors
-import javax.persistence.EntityManager
+
 
 @Service
 class TopicoService(
@@ -23,7 +21,6 @@ class TopicoService(
     private val topicoViewMapper: TopicoViewMapper,
     private val topicoFormMapper: TopicoFormMapper,
     private val notFoundMessage: String = "Elemento não encontrado",
-    private val em: EntityManager
 ) {
 
     fun listar(
